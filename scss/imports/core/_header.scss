@@ -73,7 +73,15 @@ header{
                             @include transition($t $cubic);
                         }
                     }    
+                    &.active{ //nam trong class can active
+                        
+                    &:after{
+
+                        @include transform(scaleX(1));
+                    }
                 }
+                }
+
             }
         }
         .right{
@@ -96,7 +104,7 @@ header{
                 &__option{
                     background-color: #353535;
                     position: absolute;
-                    right: 0;
+                    right: auto;
                     top:var(--heightHeader);
                     z-index: 198;
                     @include visible(0);
@@ -117,6 +125,7 @@ header{
                             @include transition($t);
                         }
                     }
+                  
                 }
                 &.active{
                     .lang__option{
@@ -174,7 +183,7 @@ header{
         }
     }
     // @include xs{
-    //     --heightHeadder:60px;
+    //     --heightHeader:60px;
     //     .container-fluid{
     //         .nav{
     //             width: 100vw;
@@ -185,6 +194,25 @@ header{
     //             left: 0;
     //             @include transform(initial);
     //             z-index: 200;
+
+    //             opacity: 0;
+    //             pointer-events: none;
+    //             @include transition(opacity 0.3s);
+    //             ul{
+    //                 flex-direction: column;
+    //                 @include mid(true);
+    //                 li{
+    //                     margin:25px auto;
+    //                 }
+    //             }
+    //             &.active{
+    //                 opacity: 1;
+    //                 pointer-events: auto;
+    //                 @include transition(opacity 0.3s);
+    //             }
+    //         }
+    //         .btnmenu{
+    //             display: block;
     //         }
     //     }
     // }

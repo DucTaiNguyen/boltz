@@ -9,9 +9,11 @@
         height: 100vh;
         overflow: hidden;
         --fzTitle:80px;
+    
         &__item{
             width: 100%;
             height: 100vh;
+            display: none;
             &-wrap{
                 height: 100%;
                 width: 100%;
@@ -33,6 +35,9 @@
                     margin-bottom: 20px;
 
                 }
+            }
+            &.active{
+                display: block;
             }
 
         }
@@ -87,9 +92,25 @@
                      flex-direction: column;
                     margin: 0;
                     padding: 0;
+
+                  
                    
                     &__arrow{
                         padding: 3px;
+                        @include keyframes(topdown){
+                        0%{
+                            @include transform(translateY(0px));
+                            opacity: 0;
+                            @include transition(0.3s);
+
+                        }
+                        100%{
+                            @include transform(translateY(30px));
+                            opacity: 1;
+                            @include transition(0.3s);
+                        }
+                    }
+                        @include animation(topdown 1s ease forwards infinite);
                     }
                 }
                 .control{
@@ -120,6 +141,7 @@
 
             
         }
+      
     }
     .products{
         --wImage:520px;
@@ -194,7 +216,7 @@
                             border:15px solid #fff;
                             border-radius: 50%;
                             @include mid(false);
-                            z-index: 0;
+                            z-index: -1;
                         }
                         >img{
                             min-width: 100%;
@@ -393,10 +415,13 @@
             column-gap: 20px;
             &-item{
                 .img{
-                    height: var(--heightImgThumb);
+                    // height: var(--heightImgThumb);
+                    height: 0;
                     overflow: hidden;
                     position: relative;
                     cursor: pointer;
+                    padding-bottom: 60%;
+
 
                
              

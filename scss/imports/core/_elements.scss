@@ -76,3 +76,51 @@ img {
         }
     }
     }
+.back-to-top{
+    position:fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background:rgb(65, 54, 54);
+    border-radius: 50%;
+    opacity: 0.4;
+    cursor: pointer;
+}
+.popup-video{
+    z-index: 1000;
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height:100vh;
+    background:rgba(39, 36, 36, 0.7);
+    justify-content:center;
+    align-items: center;
+    .iframe_wrap{
+        background:$black-cl;
+        border: 5px solid #eee;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: 600px;
+        max-height: 338px;
+        .close{
+        position:absolute;
+        right: -25px;
+        top: -25px;
+        border-radius: 50%;
+        cursor: pointer;
+        font: size 20px;
+        width: 50px;
+        height: 50px;
+        background:whitesmoke;
+        font-weight: bold;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    }
+
+}
