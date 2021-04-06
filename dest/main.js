@@ -150,21 +150,36 @@ document.querySelector('.popup-video').addEventListener('click', function (event
 
 let listItemSlider = document.querySelectorAll('.slider__item');
 let currentSlider = 0;
+let number = document.querySelector('.paging__number');
+
 listItemSlider.forEach(function (itemSlider, index) {
     if (itemSlider.classList.contains('active')) {
         currentSlider = index;
     }
 })
+
+
+number.innerHTML = (currentSlider + 1).toString().padStart(2, '0');
+console.log(number);
+
+
+
+
+
+
 // console.log(currentSlider);
 document.querySelector('.control__btn.next').addEventListener('click', function () {
     if (currentSlider < listItemSlider.length - 1) {
-        listItemSlider[currentSlider].classList.remove('active');
-        listItemSlider[currentSlider + 1].classList.add('active');
-        currentSlider++;
+        // listItemSlider[currentSlider].classList.remove('active');
+        // listItemSlider[currentSlider + 1].classList.add('active');
+        // currentSlider++;
+
+        goTo(currentSlider + 1);
     } else {
-        listItemSlider[currentSlider].classList.remove('active');
-        listItemSlider[0].classList.add('active');
-        currentSlider = 0;
+        // listItemSlider[currentSlider].classList.remove('active');
+        // listItemSlider[0].classList.add('active');
+        // currentSlider = 0;
+        goTo(0);
     }
 
 
@@ -174,14 +189,22 @@ document.querySelector('.control__btn.next').addEventListener('click', function 
 document.querySelector('.control__btn.prev').addEventListener('click', function () {
     // console.log(1);
     if (currentSlider > 0) {
-        listItemSlider[currentSlider].classList.remove('active');
-        listItemSlider[currentSlider - 1].classList.add('active');
-        currentSlider--;
+        // listItemSlider[currentSlider].classList.remove('active');
+        // listItemSlider[currentSlider - 1].classList.add('active');
+        // currentSlider--;
+        goTo(currentSlider - 1);
     } else {
-        listItemSlider[currentSlider].classList.remove('active');
-        listItemSlider[listItemSlider.length - 1].classList.add('active');
-        currentSlider = listItemSlider.length - 1;
+        // listItemSlider[currentSlider].classList.remove('active');
+        // listItemSlider[listItemSlider.length - 1].classList.add('active');
+        // currentSlider = listItemSlider.length - 1;
+        goTo(listItemSlider.length - 1);
     }
 
 
 })
+
+function goTo(index) {
+    listItemSlider[currentSlider].classList.remove('active');
+    listItemSlider[index].classList.add('active');
+    currentSlider = index;
+}
