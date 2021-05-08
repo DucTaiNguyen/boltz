@@ -127,6 +127,11 @@ table {
 *::after {
 	box-sizing: inherit;
 }
-a{
+
+a {
+	color: #969090;
 	text-decoration: none;
+	&:hover {
+		color: rgba(255, 255, 255, 0.685);
+	}
 }

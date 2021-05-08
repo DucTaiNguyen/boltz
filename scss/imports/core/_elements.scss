@@ -1,126 +1,26 @@
 // css button, title, icon, elements...
 img {
     max-width: 100%;
-    // min-width: 100%;
-    // min-height: 100%;
 }
-.btnmain{
-    border: 1px solid $white-cl;
-    padding: 12px 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: $white-cl;
-    text-transform: uppercase;
-    // @include transition($t);
-    i{
-        display: block;
-        margin-left: 15px;
-        position: relative;
-        right: 0;
-        @include transition($t);
+.button {
+    margin-right: 15px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: hsla(0, 3.23%, 41.19%, 0.89);
+    padding: 10px;
+    &:hover {
+        background-color: rgb(119, 138, 138);
     }
-    .icon-play{
-        width: 20px;
-        margin-right: 10px;
-    }
-
-    &:hover{
-        background: $yellow-cl;
-        @include transition($t);
-        i{
-            margin-left: 22px;
-            right: 10px;
-            @include transition($t);
-        }
-
-    }
-    @include sm{
-        padding: 10px 20px;
-    }
-
 }
-.btnlearnmore{
-    display: inline-flex;
-    font-family: Pb;
-    text-transform: uppercase;
-    color: $black-cl;
-    letter-spacing: 2px;
-    position: relative;
-    @include transition($t);
-    img{
-        margin-left: 10px;
+.footer {
+    color: antiquewhite;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-size: 14px;
 
-    }
-    &:before{
-        content: '';
-        width: 70px;
-        height: 2px;
-        background: $yellow-cl;
-        display: block;
-        position: absolute;
-        bottom: -7px;
-        left: 0;
-        // @include transform(translateX(0px));
-    }
-    img{
-        position: relative;
-        @include transform(translateX(0px));
-        @include transition($t);
-    }
-    &:hover{
-        img{
-            
-            @include transform(translateX(10px));
-            @include transition($t);
-        }
-    }
-    }
-.back-to-top{
-    position:fixed;
-    right: 10px;
-    bottom: 10px;
-    width: 50px;
-    height: 50px;
-    background:rgb(65, 54, 54);
-    border-radius: 50%;
-    opacity: 0.4;
-    cursor: pointer;
-}
-.popup-video{
-    z-index: 1000;
-    display:none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100vw;
-    height:100vh;
-    background:rgba(39, 36, 36, 0.7);
-    justify-content:center;
-    align-items: center;
-    .iframe_wrap{
-        background:$black-cl;
-        border: 5px solid #eee;
-        position: relative;
-        height: 100%;
-        width: 100%;
-        max-width: 600px;
-        max-height: 338px;
-        .close{
-        position:absolute;
-        right: -25px;
-        top: -25px;
-        border-radius: 50%;
-        cursor: pointer;
-        font: size 20px;
-        width: 50px;
-        height: 50px;
-        background:whitesmoke;
+    h3 {
         font-weight: bold;
-        display:flex;
-        align-items: center;
-        justify-content: center;
     }
-    }
-
 }
