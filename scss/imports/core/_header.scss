@@ -1,6 +1,8 @@
 // css header
 header {
     .container-fluid {
+        position: fixed;
+        z-index: 1;
         .list {
             display: flex;
             margin-right: 0px;
